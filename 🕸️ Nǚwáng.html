@@ -1,0 +1,3760 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
+    
+<link href="https://fonts.googleapis.com/css2?family=Cantarell&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>•៚ㅤ১ᬽ Nǚwángㅤ𖥸</title>
+
+<input type="file" id="bgInput" accept="image/*" style="display:none" onchange="mudarFundo(event)">
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+
+  /* FUNDO */
+  background: #111;
+
+  color: #cbd5ff;
+
+  /* brilho suave */
+  text-shadow:
+    0 0 2px rgba(255,255,255,0.2),
+    0 0 6px rgba(150,180,255,0.3);
+
+  display: flex;
+  flex-direction: column;
+
+  height: 655px;               . /* 1050px; TELA CHEIA */
+  width: 500px;
+
+  border: 1px solid rgba(120,140,255,0.2);
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  font-style: italic;
+
+  /* efeito vidro */
+  backdrop-filter: blur(0px);
+}
+
+
+
+
+
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.digitando{
+  color:#888;
+  animation: piscar 1s infinite;
+}
+
+header {
+  background: rgba(20,20,20,0.8);
+  backdrop-filter: blur(8px);
+  padding: 8px;
+
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#chat {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(1px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.usuario {
+  text-align: right;
+  color: #cfcfcf;
+  font-size: 16px;
+  text-shadow:
+  0 0 2px #CBD5FF,
+  0 0 5px #CBD5FF,
+  0 0 10px #CBD5FF;
+}
+
+.ia {
+  text-align: left;
+  font-size: 15px;
+
+  color: #ffffff;
+  
+  text-shadow: 0 0 4px rgba(255,255,255,0.2), #999;
+}
+
+#inputArea {
+    display: flex;
+    padding: 3px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(8px);
+    border-top: 0px solid #555;
+}
+
+input {
+  flex: 1;
+  padding: 6px;
+
+  border-radius: 10px;
+  border: 0px solid transparent; /* rgba(255,255,255,1); */
+
+  background: rgba(0,0,0,0.1);   /* background: rgba(20,20,20,0.8); */
+  backdrop-filter: blur(8px);
+  
+  color: white;
+
+  outline: none;
+}
+
+button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+
+  color: white;
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.digitando {
+    color: #777; /* cinza fraco */
+    font-style: italic;
+}
+
+
+
+
+.menuMensagem {
+  padding: 8px 10px;
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  animation: aparecer 0.3s ease;
+}
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                  FONTES 👻                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+.btnFonte{
+  display:block;              /* força um embaixo do outro */
+  width:30%;                 /* todos mesmo tamanho */
+  margin:5px 0;
+  padding:8px;
+
+  background:opacity 20% #222;
+  color:white;
+
+  border:1px solid #CBD1FF;      /*🩷 Kafka = #EF007E */
+  border-radius:8px 28px;
+
+  cursor:pointer;
+  font-size:14px;
+  text-align:center;
+  
+  text-shadow:          /*🩷 Kafka = #EF007E */
+  0 0 5px #CBD1FF,
+  0 0 10px #CBD1FF,
+  0 0 20px #CBD1FF;
+}
+
+.btnFonte:hover{
+  background:#555;
+}
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                  FONTES 👻                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                              WALLPAPER 🖼️                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+body {
+  background-image: url(
+  
+  "https://raw.githubusercontent.com/MaisyEvanielly/Papel-de-Parede/refs/heads/main/Wallpaper%201.jpeg");
+  background-size: 99% 99%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/*                               MEUS FUNDOS
+
+
+1 - https://www.dropbox.com/scl/fi/ij34r522wld2g5q0u8ilb/IA.png?rlkey=8qswbykasor1ssxbza9ewnxhs&st=t4ak5xrq&raw=1");
+
+2 - https://i.xiutaku.com/photo/uploadfile/202401/23/EC1673802.webp
+
+3 - https://www.dropbox.com/scl/fi/7b6z8q43s56eljrpc6i1b/Xuan-Yi.png?rlkey=gasr2sn03azh4vzz9infwknsc&st=daa99p4u&raw=1");
+
+4 - https://i.xiutaku.com/photo/uploadfile/202403/21/B516293463.webp");
+
+5 - https://raw.githubusercontent.com/sangonomiapk-debug/Isabella_Monteiro/main/Isabella_Monteiro%2024.jpeg");
+
+
+
+ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤWALLPAPERS
+    Wallpaper 1; https://raw.githubusercontent.com/MaisyEvanielly/Papel-de-Parede/refs/heads/main/Wallpaper%201.jpeg");
+    
+    Wallpaper 2; https://raw.githubusercontent.com/MaisyEvanielly/Papel-de-Parede/refs/heads/main/Wallpaper%202.jpeg");
+    
+    Wallpaper 3: https://raw.githubusercontent.com/MaisyEvanielly/Papel-de-Parede/refs/heads/main/Wallpaper%203.jpeg");
+    
+    Wallpapee 4: https://raw.githubusercontent.com/MaisyEvanielly/Papel-de-Parede/refs/heads/main/Wallpaper%204.jpeg");
+    
+    Wallpaper 5:https://raw.githubusercontent.com/MaisyEvanielly/Papel-de-Parede/refs/heads/main/Wallpaper%205.jpeg");
+
+
+
+
+    Wallpaper Circe; https://raw.githubusercontent.com/sangonomiapk-debug/Circe_fotos/main/Circe_Mayer%2057.jpg");
+    
+    Wallpaper Circe; https://raw.githubusercontent.com/sangonomiapk-debug/Circe_fotos/main/Circe_Mayer%2039.jpg");
+    
+    Wallpaper Circe; https://raw.githubusercontent.com/sangonomiapk-debug/Circe-Mayer/main/Circe_Mayer%2042.jpg");
+    
+    Wallpaper Circe; https://raw.githubusercontent.com/sangonomiapk-debug/Circe-Mayer/main/Circe_Mayer%2037.jpg");
+
+
+
+*/
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                              WALLPAPER 🖼️                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                MINI-GAME 🎮🕹️                           */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+button{
+  background:#222;
+  color:white;
+  background:transparent;
+  border:1px solid #CBD5FF;      /*🩷 Kafka = #EF007E */
+  border-radius:8px 24px;
+  cursor:pointer;
+  text-align: center;
+}
+
+button:hover{
+  background:#555;
+  text-align: center;
+  border:1px solid #CBD5FF;     /*🩷 Kafka = #EF007E */
+}
+
+
+/*==========================================*/
+/* ADIVINHAÇÃO 📌 */
+/*==========================================*/
+.modo-jogo {
+  text-shadow: 
+    0 0 5px #000,
+    0 0 10px #000,
+    0 0 20px #000;
+}
+
+
+
+/*==========================================*/
+/* JOGO DA VELHA 📌 */
+/*==========================================*/
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.casa {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  background: gray;
+  border-radius:8px;
+  border: 1px solid #CBD5FF;    /*🩷 Kafka = #EF007E */   /*A020F0*/
+}
+
+.casa:disabled {
+  cursor: default;
+  background: #777;
+}
+
+
+
+/*==========================================*/
+/* PEDRA PAPEL TESOURA 📌 */
+/*==========================================*/
+.ppt-botoes{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  
+}
+
+.ppt-btn{
+  font-size:22px;
+  padding:6px;
+  cursor:pointer;
+  border:1px solid #CBD5FF;
+  background:#777;
+  border-radius:8px;   /*Raio da borda*/
+}
+
+.ppt-btn:hover{
+  background:#ddd;
+  
+}
+
+
+
+/*==========================================*/
+/* JOGO DA MEMORIÓRIA 📌 */
+/*==========================================*/
+.memoria-tabuleiro{
+  display:grid;
+  grid-template-columns:repeat(4,60px);
+  gap:8px;
+  margin-top:10px;
+}
+
+.memoria-carta{
+  width:60px;
+  height:60px;
+  font-size:26px;
+  cursor:pointer;
+  border:2px solid black;
+  background:#777";
+  border-radius:8px;
+}
+
+.memoria-carta.revelada{
+  background:#ddd;
+}
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                MINI-GAME 🎮🕹️                           */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+.mensagem img{
+  max-width:150px;
+  border-radius:8px;
+  margin-top:4px;
+}
+
+
+/*.                   buttons;    /*🩷 Kafka = #EF007E */
+</style>
+</head>
+
+    
+
+    
+
+
+
+
+<button onclick="minigame()" 
+style="
+position:absolute;
+top:1px;
+left:1px;
+font-size:0px;
+padding:0px 0px;
+border-radius:0px;
+border:1px solid #CBD5FF;
+background:transparent;
+color:transparent;
+cursor:center;
+
+">
+🎮
+</button>
+
+
+
+<button id="btnLimpar"style="
+position:absolute;
+top:1px;
+left:1px;
+font-size:0px;
+padding:0px 0px;
+border-radius:0px;
+border:1px solid #CBD5FF;
+background:transparent;
+color:transparent;
+cursor:center;
+
+
+">🧹</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header>•៚ㅤ১ᬽ Nǚwángㅤ𖥸</header>
+
+
+
+<button onclick="abrirMenu()" 
+style="
+position:absolute;
+top:5px;
+left:5px;
+font-size:20px;
+padding:2px 6px;
+border-radius:6px;
+border:1px solid transparent;
+
+color:white;
+cursor:center;
+text-shadow:
+  0 0 2px #CBD5FF,
+  0 0 5px #CBD5FF,
+  0 0 10px #CBD5FF;
+">
+☰
+</button>
+
+
+
+
+
+
+
+
+
+
+<button onclick="meuMenu()" style="
+position:absolute;
+top:8px;
+left:35px;
+font-size:19px;
+padding:2px 6px;
+border-radius:6px;
+border:1px solid transparent;
+
+color:white;
+cursor:center;
+text-shadow:
+  0 0 2px #CBD5FF,
+  0 0 5px #CBD5FF,
+  0 0 10px #CBD5FF;
+  ">Menu</button>
+
+
+
+
+
+
+<div id="menuLateral" style="
+position:absolute;
+top:44px;
+left:5px;
+background: rgba(20,20,20,0.8);
+
+border-bottom: 1px solid rgba(255,255,255,0.1);
+border-radius:10px;
+padding:8px;
+display:none;
+flex-direction:column;
+gap:5px;
+z-index:999;
+">
+
+<button onclick="minigame()">🎮 Jogos</button>
+<button onclick="itch()">🛒 Itch.io</button>
+<button onclick="limparChat()">🗑️ Limpar</button>
+
+
+</div>
+
+<div id="chat"></div>
+
+
+
+
+
+
+<div id="inputArea">
+    
+<input type="text" id="msg" style="
+background: rgba(20,20,20,0.8);
+backdrop-filter: blur(8px);
+"placeholder="Digite algo...">
+
+
+
+<button onclick="enviar()"style="
+border:1px solid transparent;
+background: rgba(20,20,20,0.8);
+ backdrop-filter: blur(8px);
+ text-shadow:
+  0 0 2px #CBD5FF,
+  0 0 5px #CBD5FF,
+  0 0 10px #CBD5FF;
+">Ok</button>
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+
+//tradutor
+let modoTradutor = false;
+let idiomaOrigem = "pt";
+let idiomaDestino = "en";
+
+
+//mini-game
+let jogoAtivo = false;
+let numeroSecreto = 0;
+let tentativas = 0;
+let velhaAtiva = false;
+let tabuleiro = ["", "", "", "", "", "", "", "", ""];
+let pptAtivo = false;
+let memoriaAtivo = false;
+let sequenciaMemoria = [];
+let nivelMemoria = 0;
+let memoriaJogoAtivo = false;
+let memoriaCartas = [];
+let memoriaSelecionadas = [];
+let banco = JSON.parse(localStorage.getItem("banco")) || {};
+const emojisMemoria = [
+"🐱","🐱",
+"🐶","🐶",
+"🐸","🐸",
+"🐵","🐵",
+"🐼","🐼",
+"🐷","🐷",
+"🐯","🐯",
+"🐰","🐰"
+];
+
+//mini-game...
+let conselhos = [
+"Nunca tome decisões importantes com pressa.",
+"Pequenos passos também te levam longe.",
+"Nem tudo precisa de uma resposta imediata.",
+"Confie mais no processo do que no resultado.",
+"Aprender a dizer não é tão importante quanto dizer sim.",
+"Você não precisa agradar todo mundo.",
+"Erros são apenas versões de aprendizado.",
+"Descansar também faz parte do progresso.",
+"O tempo certo nem sempre é o mais confortável.",
+"Às vezes, silêncio é a melhor resposta.",
+"Não compare seu início com o meio de alguém.",
+"Disciplina vence motivação.",
+"Tudo passa, até os dias difíceis.",
+"Seja paciente com seu próprio crescimento",
+"Nem todo pensamento merece atenção.",
+"Foque no que você pode controlar.",
+"O desconforto também ensina.",
+"Você já superou coisas que achou impossíveis.",
+"Ser consistente é mais importante que ser perfeito.",
+"A vida não é uma corrida.",
+"Nem todo silêncio é vazio, às vezes ele é resposta.",
+"Você não precisa resolver tudo hoje.",
+"Pequenos avanços ainda são avanços.",
+"Aprenda a descansar, não a desistir.",
+"Nem todo mundo merece acesso à sua energia.",
+"Se algo te custa sua paz, é caro demais.",
+"O tempo revela o que a pressa esconde.",
+"Você não precisa da aprovação de ninguém para continuar.",
+"Seja gentil consigo mesmo no processo.",
+"Não confunda urgência com importância.",
+"Às vezes o melhor movimento é não reagir.",
+"Você não controla tudo, e tudo bem.",
+"Nem todo caminho precisa ser rápido.",
+"Escute mais sua intuição.",
+"Nem todo pensamento merece ser seguido.",
+"Você já superou dias piores.",
+"Disciplina constrói o que motivação começa.",
+"Nem sempre entender é necessário, às vezes aceitar basta.",
+"O desconforto também faz parte do crescimento.",
+"Você não precisa se explicar o tempo todo.",
+"Ser consistente vale mais que ser perfeito.",
+"O progresso invisível ainda é progresso.",
+"Nem todo erro precisa virar culpa.",
+"Você não está atrasado, está no seu tempo.",
+"Evite comparar bastidores com palcos.",
+"Seja paciente com sua evolução.",
+"Nem tudo que dói é ruim, às vezes ensina.",
+"Se afaste do que te esgota.",
+"Valorize quem te traz paz.",
+"Nem toda resposta precisa ser imediata.",
+"A vida muda mais rápido do que parece.",
+"Você merece coisas boas também.",
+"Não se cobre tanto por coisas fora do seu controle.",
+"O simples também é valioso.",
+"Às vezes o melhor plano é improvisar.",
+"Aprender também cansa, e tudo bem.",
+"Você pode recomeçar quantas vezes precisar.",
+"Nem tudo precisa fazer sentido agora.",
+"O importante é não parar.",
+"Seja firme, mas não duro consigo.",
+"A mudança começa em pequenas decisões.",
+"Você não precisa carregar tudo sozinho.",
+"O que você planta hoje, colhe depois.",
+"Seja mais curioso e menos crítico.",
+"Nem tudo precisa ser resolvido de uma vez.",
+"O silêncio também comunica.",
+"Você não precisa vencer todos os dias.",
+"Foque no que você pode fazer hoje.",
+"O passado não define seu próximo passo.",
+"Você pode mudar de ideia.",
+"Nem todo mundo vai te entender.",
+"Está tudo bem desacelerar.",
+"Às vezes menos é mais.",
+"Você não precisa provar nada a ninguém.",
+"O descanso é parte do progresso.",
+"Nem toda batalha precisa ser lutada.",
+"Confie mais em si mesmo.",
+"Você não está sozinho, mesmo quando parece.",
+"O tempo cuida de muita coisa.",
+"Se permita errar e aprender.",
+"Nem todo dia precisa ser produtivo.",
+"O importante é continuar tentando.",
+"Você pode ir no seu ritmo.",
+"Nem toda opinião importa.",
+"Aprenda a deixar ir.",
+"O que é seu encontra você.",
+"Você não precisa ter todas as respostas.",
+"O começo é sempre mais difícil.",
+"A consistência vence o talento.",
+"Seja mais leve com você.",
+"Nem tudo precisa ser perfeito.",
+"Você merece descanso sem culpa.",
+"A vida não é só sobre resultados.",
+"Nem todo atraso é fracasso.",
+"O importante é não desistir de você.",
+"Você já tem o suficiente para começar.",
+"Não subestime pequenos passos.",
+"Você pode melhorar com o tempo.",
+"Nem todo desafio é um problema.",
+"O aprendizado vem da prática.",
+"Você não precisa ser igual a ninguém.",
+"Cada dia é uma nova chance.",
+"Nem tudo depende de você.",
+"O esforço certo vale mais que o esforço intenso.",
+"Você pode escolher diferente hoje.",
+"Não ignore seus próprios limites.",
+"Você merece respeito, inclusive de si mesmo.",
+"Nem toda pressa leva mais longe.",
+"Aprenda a ouvir antes de reagir.",
+"Você pode construir algo melhor.",
+"Nem todo caminho é linear.",
+"O importante é seguir em frente.",
+"Você está evoluindo, mesmo sem perceber.",
+"Nem tudo precisa ser resolvido agora.",
+"Você pode fazer melhor amanhã.",
+"Não se prenda ao que já passou.",
+"Você merece paz.",
+"O crescimento leva tempo.",
+"Nem toda dor é permanente.",
+"Você pode confiar no processo.",
+"Seja paciente com a vida.",
+"Nem todo obstáculo é o fim.",
+"Você pode recomeçar hoje mesmo.",
+"Não desista por causa de um dia ruim.",
+"O importante é continuar.",
+"Você é mais forte do que pensa.",
+"Nem tudo é tão urgente quanto parece.",
+"Respire, reorganize e continue.",
+"Você já chegou até aqui.",
+"Nem todo erro define você.",
+"O caminho é tão importante quanto o destino.",
+"Você pode aprender com qualquer situação.",
+"Nem tudo precisa ser controlado.",
+"Você merece coisas boas.",
+"Não tenha medo de tentar de novo.",
+"Você pode mudar sua história.",
+"Nem todo esforço é em vão.",
+"Confie no seu próprio ritmo."
+];
+
+//ㅤ⛬࿐
+
+
+// ===========================================================================
+// RESPOSTAS PROFRAMGRAMADAS 👇🏻
+// ===========================================================================
+const respostas = {
+"log": "ㅤ⛬࿐ㅤ",
+
+
+
+
+
+
+// ────────────────────────
+// Favoritas 👑
+// ────────────────────────
+
+    "Favoritas": [
+    "01 https://br.youporn.com/amateur/avazev-ph/",
+    "02 https://pt.pornhub.com/model/bad-hot-lady",
+    "03 https://pt.pornhub.com/model/jenny-kitty",
+    "04 https://br.youporn.com/amateur/mini-diva/",
+    "05 https://pt.pornhub.com/model/badcutegirl",
+    "06 https://pt.pornhub.com/model/syndicete",
+    "07 https://pt.pornhub.com/video/search?search=samantha+flair",
+    "08 https://br.youporn.com/amateur/diana-rider-ph/",
+    "09 https://pt.pornhub.com/model/mini-pink",
+    "10 https://pt.pornhub.com/model/paula-mooney",
+    "11 https://pt.pornhub.com/model/miulio",
+    "12 https://pt.pornhub.com/video/search?search=candy+love",
+    "13 https://pt.pornhub.com/model/makissse",
+    "14 https://pt.pornhub.com/model/anny-walker",
+    "15 https://pt.pornhub.com/model/myanny",
+    "16 https://pt.pornhub.com/model/kitty",
+    "17 https://pt.pornhub.com/model/amateurtwo",
+    "18 https://pt.pornhub.com/model/mydeeplove",
+    "19 https://pt.pornhub.com/model/amateurpurr",
+    "20 https://pt.pornhub.com/model/shawty-lanna",
+    
+   ],
+
+
+
+
+
+
+
+
+
+
+
+// ────────────────────────
+// Videos Porno 🌿
+// ────────────────────────
+
+
+    "Porno": [
+
+
+    "01⛬࿐ My Amny  =  https://drive.google.com/uc?export=view&id=1Qt6aFZw1QFDpnhbUKlEcdqhqV1cmmNYn",
+
+    "02⛬࿐ My anny  =  https://drive.google.com/uc?export=view&id=109EYA6leoOQjQNlPwGAoEp4z_Gtk9wWb",
+
+    "03⛬࿐ My Anny  =  https://drive.google.com/uc?export=view&id=1Ts_mdOM6OJhuUBVQkWt0MsI_X8iO8IcN",
+
+    "04⛬࿐ My Anny  =  https://drive.google.com/uc?export=view&id=1d0auONF2gcsaUcLl-3YN5VhUy190MFRX",
+
+    "05⛬࿐ My Anny  =  https://drive.google.com/uc?export=view&id=14rLidTbWJUOSokRYljxwVF65PlIJ7SgM",
+
+    "06⛬࿐ㅤCandy love  =  https://drive.google.com/uc?export=view&id=1GiFblsGvtfzre-0v16AACqao3FFXcC-6",
+
+    "07⛬࿐ Avazev  =  https://drive.google.com/uc?export=view&id=151ZzrslHepjK9QNnk8CqbrlAFRj1baG_",
+
+    "08⛬࿐ Candy Love  =  https://drive.google.com/uc?export=view&id=1kNhwOR7wUBsVBKelgxucVXFy3ycCi5pO",
+
+    "09⛬࿐ Cabdy Love  =  https://drive.google.com/uc?export=view&id=1W4M5788q8bSY3Y-gemBLf3daI56wc1KI",
+
+    "10⛬࿐ Brenda Trindade  =  https://drive.google.com/uc?export=view&id=1MsxsmAQqloZ1saHnCHVhN4Bbe17E1U5-",
+
+    "11⛬࿐ Novinha Basileira  =  https://drive.google.com/uc?export=view&id=1GY_xU0yV0yxDsZxx3fsPAaqwQmG3Mvru",
+
+    "12⛬࿐ Avazev = https://drive.google.com/uc?export=view&id=1AMFHBnf5VWIsjT9sRUofjBYoLk9O0L_Y",
+
+"ㅤ",
+    
+    ],
+    
+    
+    
+
+
+// ────────────────────────
+// Incestos 👻🔥
+// ────────────────────────
+    
+    
+    "Incesto": [
+    "https://drive.google.com/file/d/1LHSLaQ4B8g2P2s1cLw3ShVlFHkC3mvhn/preview",
+    "ㅤ01  ⛬࿐",
+    
+    "https://drive.google.com/file/d/1ZFzeGETn2rRTlmk3SPGmapDgq-P82pte/preview",
+    "ㅤ02  ⛬࿐",
+    "https://drive.google.com/uc?export=view&id=1t0dM531Ur-EhxMajMOc0p3LgbJXM7ok-",
+    "ㅤ03  ⛬࿐",
+    "https://drive.google.com/uc?export=view&id=1MyCcuO3kt2p6jttY3Prh1tUQE8RKXcUr",
+    "ㅤ04  ⛬࿐",
+    ],
+    
+    
+    
+    
+
+
+// ────────────────────────
+// Videos Secretos 🔒🔞
+// ────────────────────────
+    
+    
+    "Videos Secretos": [
+    "ㅤ01 ⛬࿐ㅤhttps://drive.google.com/file/d/1cjQK2eunHplN-tAJSv1RmS_tTE9dXkAM/view?usp=drivesdk",
+    "ㅤ02 ⛬࿐ㅤhttps://drive.google.com/file/d/10fzFu12qYss4WznVAlYMKfSujkHT8L-c/view?usp=drivesdk",
+    "ㅤ03 ⛬࿐ㅤhttps://drive.google.com/file/d/1bexhVssIqkmC72F-_pGIKttGTUpNn_rl/view?usp=drivesdk",
+    
+    ],
+    
+    
+    
+    
+    
+    
+// ────────────────────────
+// Onlyfans 🌐
+// ────────────────────────
+    
+    "Onlyfans": [
+"ㅤㅤ  01  ⛬࿐  https://telegra.ph/file/29ed4240b02898d9306a7.mp4",
+
+"  ㅤㅤ02  ⛬࿐  https://telegra.ph/file/1b1a036ee8e7b4e775afa.mp4",
+
+"  ㅤㅤ03  ⛬࿐  https://telegra.ph/file/29e4af089240b64d464c2.mp4",
+
+"  ㅤㅤ04  ⛬࿐  https://telegra.ph/file/8a76de1a0b17ecd87f0dd.mp4",
+
+"  ㅤㅤ05  ⛬࿐  https://telegra.ph/file/e61b54863743ef21e8e1a.mp4",
+
+"  ㅤㅤ06  ⛬࿐  https://telegra.ph/file/de62e675747b22f9f4eb9.mp4",
+
+"  ㅤㅤ07  ⛬࿐  https://telegra.ph/file/dbe94cf7534384a3612fc.mp4",
+
+"  ㅤㅤ08  ⛬࿐  https://telegra.ph/file/409d03bdf5eed1947ea84.mp4",
+
+"  ㅤㅤ09  ⛬࿐  https://telegra.ph/file/5681627309f5a801144e6.mp4",
+
+"  ㅤㅤ10  ⛬࿐  https://telegra.ph/file/77b3a56fc1e3ceb178395.mp4",
+
+"  ㅤㅤ11  ⛬࿐  https://telegra.ph/file/c26f0d2bbee129cc27dc1.mp4",
+
+"  ㅤㅤ12  ⛬࿐  https://telegra.ph/file/4ee4c21445bf6096a3654.mp4",
+
+"  ㅤㅤ13  ⛬࿐  https://telegra.ph/file/af1769d5fb93310324985.mp4",
+
+"  ㅤㅤ14  ⛬࿐  https://telegra.ph/file/ed1bd05220378368c3d25.mp4",
+
+"  ㅤㅤ15  ⛬࿐  https://telegra.ph/file/de758a99a97789ee0d017.mp4",
+
+"  ㅤㅤ16  ⛬࿐  https://telegra.ph/file/7d6ccc6b300b677258aeb.mp4",
+
+"  ㅤㅤ17  ⛬࿐  https://telegra.ph/file/06d34fc8b791973c5f14c.mp4",
+
+"  ㅤㅤ18  ⛬࿐  https://telegra.ph/file/f487dd54b905cb4abf630.mp4",
+
+"  ㅤㅤ19  ⛬࿐  https://telegra.ph/file/65a6d0d9454dd5ec56e4e.mp4",
+
+"  ㅤㅤ20  ⛬࿐  https://telegra.ph/file/1264cf5687b148ff9a1ee.mp4",
+
+"  ㅤㅤ21  ⛬࿐  https://telegra.ph/file/efb753aeccc5520c49cca.mp4",
+
+"  ㅤㅤ22  ⛬࿐  https://telegra.ph/file/0adc6c90e7b1cd8da6644.mp4",
+
+"  ㅤㅤ23  ⛬࿐  https://telegra.ph/file/74ba94a61c73daebac36c.mp4",
+
+"  ㅤㅤ24  ⛬࿐  https://telegra.ph/file/9bdcdd74f500f8066bf02.mp4",
+
+"  ㅤㅤ25  ⛬࿐  https://telegra.ph/file/3da8a43ff3f29453a34ff.mp4",
+
+"  ㅤㅤ26  ⛬࿐  https://telegra.ph/file/31579ffa227ad60f3fb48.mp4",
+
+"  ㅤㅤ27  ⛬࿐  https://telegra.ph/file/0b98fe52f3c145274367e.mp4",
+
+"  ㅤㅤ28  ⛬࿐  https://telegra.ph/file/a0c715b546060805a89aa.mp4",
+
+"  ㅤㅤ29  ⛬࿐  https://telegra.ph/file/d159e2f7166b46714dddd.mp4",
+
+"  ㅤㅤ30  ⛬࿐  https://telegra.ph/file/4f5317a1c8b31b983d5a3.mp4",
+
+"  ㅤㅤ31  ⛬࿐  https://telegra.ph/file/f2bfe119b8d51d249804e.mp4",
+
+
+    ],
+    
+    
+    
+    
+    
+    
+    
+// ────────────────────────
+// Fotos vazadas 🔞
+// ────────────────────────
+    "Fotos secretas": [
+"ㅤNǚwáng ⛬࿐ㅤㅤhttps://drive.google.com/uc?export=view&id=1DaXg8bBqcEcj6nHyr2xcje7OCLiW8d8S",
+"ㅤ",
+"ㅤ01 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1un5u2m1jOFh9hL0LLov4c_5Jjr5Ky-Cf",
+"ㅤ02 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1pH_Eg3YUIix8t8bI3r0dJldeUkjt1vxe",
+"ㅤ03 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1-aMT3gYZHiH23VaPiIBEaMG6CcamUZCf",
+"ㅤ04 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1FShuqxnf0TFTOsA4f4muYQ73_Xs0NLPY",
+"ㅤ05 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1ll-CyJmbWBwpa8W24BU2IDwUXX84HMjm",
+"ㅤ06 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1u8gcaJQo_mcSLmKam0jRGLAXHaNi8Ygb",
+"ㅤ07 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1Y4wrCRGzjO0shPqst6bYocJ6TW_OpSqY",
+"ㅤ08 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1qgi__AOt-2ymRd9h8S1ZKs9Ey3gFzAjn",
+"ㅤ09 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1Vheo4pUgfX0zFXsWsbK7pWSmyDgooFjj",
+"ㅤ10 ⛬࿐ㅤhttps://drive.google.com/uc?export=view&id=1JO16-CqGd5Q2Zp8p0p0mkeNGMEqL8-XF",
+"ㅤ",
+    ],
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+"Buceta cheia de porra": [
+"⛩️ https://pt.pornhub.com/view_video.php?viewkey=68543a15b1f19",
+"⛩️ https://pt.pornhub.com/view_video.php?viewkey=669cb2fb0f404",
+"⛩️ https://www.redtube.com.br/40707481",
+"⛩️ https://pt.pornhub.com/view_video.php?viewkey=675939a116671",
+"⛩️ https://pt.pornhub.com/view_video.php?viewkey=6501b94d0613b",
+"⛩️ https://www.redtube.com.br/39932791",
+"⛩️ https://pt.pornhub.com/view_video.php?viewkey=67a46e724c052",
+"⛩️ https://pt.pornhub.com/view_video.php?viewkey=66c10c68635a8",
+"⛩️ https://www.redtube.com.br/40187361",
+  
+    ],
+
+
+
+
+
+
+
+"Bruços": [
+"🔥 https://pt.pornhub.com/view_video.php?viewkey=66d2f32a6cb9f",
+    ],
+
+
+
+
+"Fodendo minha vizinha suculenta": [
+"💦 https://pt.pornhub.com/view_video.php?viewkey=6808fe362fe1f",
+"💦 https://pt.pornhub.com/view_video.php?viewkey=66d2f32a6cb9f",
+    ],
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+// ────────────────────────
+// Tradutor 🌎
+// ────────────────────────
+    
+    "Linguas": [
+"ㅤIdiomas Disponíveis 🌎",
+"⛬࿐ㅤpt = Português",
+"⛬࿐ㅤen = Inglês",
+"⛬࿐ㅤes = Espanhol",
+"⛬࿐ㅤfr = Francês",
+"⛬࿐ㅤde = Alemão",
+"⛬࿐ㅤit = Italiano",
+"⛬࿐ㅤja = Japonês",
+"⛬࿐ㅤru = Russo",
+"⛬࿐ㅤzh = Chinês",
+],
+
+    
+
+
+
+    "menu": [
+
+  "ㅤ",
+  "    Aqui está meu menu camuflagem...",
+  "ㅤ",
+  "ㅤ",
+  "ㅤㅤㅤ ㅤ𝗡𝗨𝗗𝗘𝗦",
+  "🌐ㅤIsabella Monteiro",
+  "🌐ㅤSamantha Flair",
+  "🌐ㅤNudes vazados",
+  "ㅤ",
+  "ㅤ",
+  "⛬🃏ㅤFavoritas",
+  "⛬🃏ㅤOnlyfans",
+  "⛬🃏ㅤVideos secretos",
+  "⛬🃏ㅤFotos secretas",
+  "⛬🃏ㅤBuceta cheia de porra",
+  "⛬🃏ㅤTik Sexo",
+  "⛬🃏ㅤXXX",
+  "⛬🃏ㅤFodendo minha vizinha suculenta",
+  "⛬🃏ㅤForçando a meia-irmã a foder",
+  "⛬🃏ㅤBruços",
+  "⛬🃏ㅤPorno",
+  "⛬🃏ㅤIncesto",
+  "⛬🃏ㅤLinks porno",
+  "⛬🃏ㅤLinks",
+  "⛬🃏ㅤXiu",
+  "⛬🃏ㅤDeviantart",
+     "ㅤ",
+],
+
+
+
+
+
+
+    
+// ────────────────────────
+// Links porno 🔥
+// ────────────────────────
+
+"links porno":[
+
+"🫧 1 https://pt.pornhub.com/view_video.php?viewkey=ph62b88da88a03b",
+"🫧 2 https://pt.pornhub.com/view_video.php?viewkey=69564e5f69fc0",
+"🫧 3 https://www.redtube.com.br/40707481",
+"🫧 3 https://teenporn24.net/pt/videos/2023/blackmailing-my-stepsister-riley-reid-and-turning-her-into-my-own-personal-slut/",
+"🫧 4 https://pt.pornhub.com/view_video.php?viewkey=66cc800f9b652",
+"🫧 5 https://pt.pornhub.com/view_video.php?viewkey=65521132b5ad4",
+"🫧 6 https://pt.pornhub.com/view_video.php?viewkey=67c2c932a60ec",
+"🫧 7 https://pt.pornhub.com/view_video.php?viewkey=6797537cef1a1",
+"🫧 ",
+"🫧 ",
+"🫧 ",
+"🫧 ",
+"🫧 ",
+
+
+],
+
+
+
+
+
+
+"links" : [
+    
+    "🫧°ೄྀŞꫀ𝑙ꫀꪦᥲ༄⁂",
+    
+    "• 01ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph6367a214cc318",
+    "• 02ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph620cacfc79723",
+    "• 03ㅤhttps://pt.pornhub.com/view_video.php?viewkey=66127db62531d",
+    "• 04ㅤhttps://pt.pornhub.com/view_video.php?viewkey=665ca358c9cd5",
+    "• 05ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph60735c9164f7e",
+    "• 06ㅤhttps://pt.pornhub.com/view_video.php?viewkey=63eb943843447",
+    "• 07ㅤhttps://www.xvideos.com/video.iiuckcm9ec4/barley_legal_teen_obtem_creampie_do_stepdad.mp4",
+    "• 08ㅤhttps://pt.pornhub.com/view_video.php?viewkey=65ad26233f189",
+    "• 09ㅤhttps://xxxshake.com/videos/244427/petite-colombian-slut-takes-big-dick-in-public-jacuzzi-pov-fuck/",
+    "• 10ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph630b93c012437",
+    "• 11ㅤhttps://pt.pornhub.com/view_video.php?viewkey=65a7e4440fa19",
+    "• 12ㅤhttps://pt.pornhub.com/view_video.php?viewkey=66c19b61ce457",
+    "• 13ㅤhttps://pt.pornhub.com/view_video.php?viewkey=65131d49d3654",
+    "• 14ㅤhttps://pt.pornhub.com/view_video.php?viewkey=662568305175d",
+    "• 15ㅤhttps://pt.pornhub.com/view_video.php?viewkey=64f52f98f33ca",
+    "• 16ㅤhttps://pt.pornhub.com/gif/45214731",
+    "• ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph62c1b703595b4",
+    "• 17ㅤhttps://pt.pornhub.com/view_video.php?viewkey=689236815582f",
+    "• 18ㅤhttps://pt.pornhub.com/view_video.php?viewkey=66c8cdcd02e11",
+    "• 19ㅤhttps://www.redtube.com.br/43545371",
+    "• 20ㅤhttps://www.redtube.com.br/interstitial?videoId=40215181",
+    "• 21ㅤhttps://www.redtube.com.br/103307351",
+    "• 22ㅤhttps://www.redtube.com.br/43374181",
+    "• 23ㅤhttps://www.redtube.com.br/102416341",
+    "• 24ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph5c7ffab0cd61d",
+    "• 25ㅤhttps://pt.xgroovy.com/videos/504864/adorable-horny-blonde-seduces-her-handsome-stepbrother-and-gets-a-good-fuck-in-bed/",
+    "• 26ㅤhttps://pornogratis.com.br/gozando-dentro-da-submissa-novinha-na-foda-boa/",
+    "• 27ㅤhttps://redtub.online/2025/03/25/fodendo-a-bucetinha-da-novinha-carente/",
+    "• 28ㅤhttps://pt.pornhub.com/view_video.php?viewkey=641448af9b7b7",
+    "• 29ㅤhttps://pt.pornhub.com/view_video.php?viewkey=681cce71a1fab",
+    "• 30ㅤhttps://pt.pornhub.com/view_video.php?viewkey=666aea9e30785",
+    "• 31ㅤhttps://rusoska.com/video/190528",
+    "• 31ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph61915584b8df9",
+    "• 33ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph62495d097539e",
+    "• 34ㅤhttps://rusoska.com/video/94284",
+    "• ㅤhttps://pt.xgroovy.com/gifs/197259/bouncing-on-his-dick-before-i-finish-him-in-my-mouth/",
+    "• 35ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph60080e17cfd6b",
+    "• 36ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph620cacfc79723",
+    "• 37ㅤhttps://br.xhamster.com/videos/a-girl-with-a-perfect-figure-rides-hard-on-a-dick-xh5UZaB",
+    "• 38ㅤhttps://br.xhamster.com/videos/she-rides-her-man-to-orgasm-while-she-moans-from-pleasure-xh4roXN",
+    "• 39ㅤhttps://pt.pornhub.com/view_video.php?viewkey=648cb5221a796",
+    "• 40ㅤhttps://pt.pornhub.com/view_video.php?viewkey=65601a4759777",
+    "• 41ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph5df28758a08c3",
+    "• 42ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph60bb972947461",
+    "• 43ㅤhttps://pt.pornhub.com/view_video.php?viewkey=6501bef3e8bc3",
+    "• 44ㅤhttps://www.xvideos.com/video.ucupptda5dd/assfuck_hot_off_tattooed_mature_bukkake_eyes_rimming_woman_way_analsex_bareback_sex_euro_thick_3d_puffy_top_bondage_en_missionary_pov_step_gape_tribute_athletic_monster_interracial_petite_amador_audition_rough_couples_contest_babe_abs_tit_spit_no_bigbutt",
+    "• 45ㅤhttps://www.xvideos.com/video.udvepch398b/menina_bonita_monta_um_pau_e_faz_apostas",
+    "• 46ㅤhttps://pt.xhamster.com/videos/hot-stepsister-seduces-me-by-playing-with-a-vibrator-xhpbbwU",
+    "• 47ㅤhttps://pt.pornhub.com/view_video.php?viewkey=64f5610999ada",
+    "• 48ㅤhttps://pt.xhamster.com/videos/filled-the-nurse-with-a-full-tank-creampie-3x-xhk1aq6",
+    
+],
+
+
+
+
+
+
+"xxx": [
+
+
+"ㅤ",
+
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=662568305175d",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=64f52f98f33ca",
+"⛬࿐ㅤhttps://pt.pornhub.com/gif/45214731",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph62c1b703595b4",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=689236815582f",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=66c8cdcd02e11",
+"⛬࿐ㅤhttps://www.redtube.com.br/43545371",
+"⛬࿐ㅤhttps://www.redtube.com.br/interstitial?videoId=40215181",
+"⛬࿐ㅤhttps://www.redtube.com.br/103307351",
+"⛬࿐ㅤhttps://www.redtube.com.br/43374181",
+"⛬࿐ㅤhttps://www.redtube.com.br/102416341",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph5c7ffab0cd61d",
+"⛬࿐ㅤhttps://pt.xgroovy.com/videos/504864/adorable-horny-blonde-seduces-her-handsome-stepbrother-and-gets-a-good-fuck-in-bed/",
+"⛬࿐ㅤhttps://pornogratis.com.br/gozando-dentro-da-submissa-novinha-na-foda-boa/",
+"⛬࿐ㅤhttps://redtub.online/2025/03/25/fodendo-a-bucetinha-da-novinha-carente/",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=641448af9b7b7",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=681cce71a1fab",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=666aea9e30785",
+"⛬࿐ㅤhttps://rusoska.com/video/190528",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph61915584b8df9",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph62495d097539e",
+"⛬࿐ㅤhttps://rusoska.com/video/94284",
+"⛬࿐ㅤhttps://pt.xgroovy.com/gifs/197259/bouncing-on-his-dick-before-i-finish-him-in-my-mouth/",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph60080e17cfd6b",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph620cacfc79723",
+"⛬࿐ㅤhttps://br.xhamster.com/videos/a-girl-with-a-perfect-figure-rides-hard-on-a-dick-xh5UZaB",
+"⛬࿐ㅤhttps://br.xhamster.com/videos/she-rides-her-man-to-orgasm-while-she-moans-from-pleasure-xh4roXN",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=648cb5221a796",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=65601a4759777",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph5df28758a08c3",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=ph60bb972947461",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=6501bef3e8bc3",
+"⛬࿐ㅤhttps://www.xvideos.com/video.ucupptda5dd/assfuck_hot_off_tattooed_mature_bukkake_eyes_rimming_woman_way_analsex_bareback_sex_euro_thick_3d_puffy_top_bondage_en_missionary_pov_step_gape_tribute_athletic_monster_interracial_petite_amador_audition_rough_couples_contest_babe_abs_tit_spit_no_bigbutt",
+"⛬࿐ㅤhttps://www.xvideos.com/video.udvepch398b/menina_bonita_monta_um_pau_e_faz_apostas",
+"⛬࿐ㅤhttps://pt.xhamster.com/videos/hot-stepsister-seduces-me-by-playing-with-a-vibrator-xhpbbwU",
+"⛬࿐ㅤhttps://pt.pornhub.com/view_video.php?viewkey=64f5610999ada",
+"⛬࿐ㅤhttps://pt.xhamster.com/videos/filled-the-nurse-with-a-full-tank-creampie-3x-xhk1aq6",
+"ㅤ",
+],
+
+
+
+
+
+
+    "Caracteres": [
+"꧁꧂", "᭄",
+
+"༫", "𐂡", "𒋨", "𖤍", "༗",  "ههههه", "𓅂", "𖣘",
+"𒁂", "𒈒", "𒈞", "✰", "ཽ", "༺", "༻",
+"࿐", "☬", "Ӂ", "༒", "༈", "Ϟ", "ϟ", "ᘛ", "「", "」",
+"៚", "༆", "乡", "♡", "ྉ", "ဣ", "❥", "❦", "❧", 
+"ღ", "ஜ", "ಌ", "ஜ", "Ѽ", "✾", "✿", "❀", "❁", "❂", "❃", 
+"⍟", "★", "☆", "✦", "✧", "✩", "✪", "✫", "✬", "✭", "✮",
+"✯", "✰", "✱", "✲", "✵", "✶", "✷", "✸", "✹", "✺", "✻", 
+"✼", "✽", "۞", "❅", "❆", "❈", "❉", "❊", "❋", "࿇", "♰",
+"♱", "✙", "✚", "✛", "✜", "✞", "✟", "✠", "✢", "✣", "✤",
+"✥", "†", "✝",
+
+],
+
+
+
+
+
+
+"Isabella Monteiro": ["https://sangonomiapk-debug.github.io/Conteudos/"],
+"Samantha Flair": ["https://sangonomiapk-debug.github.io/Hospedagem/"],
+"Nudes vazados": ["https://sangonomiapk-debug.github.io/Nudes-pasta/"],
+
+
+
+
+
+
+"xiu": [
+"https://xiutaku.com/",
+"ㅤ",
+"https://xiutaku.com/14570?page=2",
+"https://xiutaku.com/17064",
+],
+
+
+
+
+// ────────────────────────
+// Consulta de senha 🔑
+// ────────────────────────
+
+"Consultar senhas" :[
+
+"ㅤConsultɑ de Senhɑs",
+"ㅤ",
+"ㅤ",
+"Sangonomia.pk@gmail.com",
+"ㅤㅤㅤsenha; ”Bolberboy.1”",
+"ㅤ",
+
+"Coreanowr@gmail.com",
+"ㅤㅤㅤsenha; ”Bolberboy.1”",
+"ㅤ",
+
+"Pamelahellem84@gmail.com",
+"ㅤㅤㅤsenha; ”Bolberboy.1”",
+"ㅤ",
+
+"Maisyevanielly@gmail.com",
+"ㅤㅤㅤsenha; ”Bolberboy.1”",
+"ㅤ",
+],
+
+// ────────────────────────
+// Consulta de senha 🔑
+// ────────────────────────
+
+
+
+
+
+
+
+
+// ────────────────────────
+// My Musicas
+// ────────────────────────
+
+   "Music" :[
+       
+       "https://www.mediafire.com/file/656esn0t2h3g64w/Music_-_Download_%25F0%2593%2586%25A9%25EA%25A8%2584%25EF%25B8%258E%25F0%2593%2586%25AA.zip/file"],
+
+
+
+
+
+
+};
+const respostaPadrao = "১  𝑁𝑎𝑜 𝑠𝑒𝑖 𝑟𝑒𝑠𝑝𝑜𝑛𝑑𝑒𝑟 𝑖𝑠𝑠𝑜 𝑎𝑖𝑛𝑑𝑎 !!!...";
+
+
+function normalizar(str) {
+  return str.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function enviar() {
+  const input = document.getElementById("msg");
+  let msg = input.value;
+  if(!msg) return;
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                            Dropbox Link 🔗
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+if (msg.startsWith(".")) {
+
+  let link = msg.substring(1).trim();
+
+  if (link.includes("dropbox.com")) {
+
+    // Remove ?dl=0, ?dl=1 ou qualquer parâmetro final equivalente
+    link = link.replace(/[?&]dl=[01]$/, "");
+
+    // Se ainda houver parâmetros, remove somente o dl=0/1
+    link = link.replace(/([?&])dl=[01](?=&|$)/, "");
+
+    // Adiciona raw=1 corretamente
+    link += (link.includes("?") ? "&raw=1" : "?raw=1");
+
+    // Formata para copiar diretamente
+    mostrar("    '" + link + "',", "bot");
+    mostrar(" ");
+
+  } else {
+    mostrar("❌ Esse não parece ser um link do Dropbox.", "bot");
+  }
+
+  input.value = "";
+  return;
+}
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                            Dropbox Link 🔗...
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                      Drive Modificador de Link 🖇️
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+  if(msg.startsWith("$")){
+
+    let texto = msg.slice(1).trim();
+
+    mostrar("ㅤㅤ✦°⪩ ㅤhttps://drive.google.com/uc?export=view&id=" + texto, "bot");
+
+    input.value = "";
+    return;
+  }
+  
+  mostrar(msg, 'usuario');
+  input.value = '';
+  
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                      Drive Modificador de Link 🖇️
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                                 Links
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+   // ------------------------------------------
+   // TikSexo
+   // ------------------------------------------
+   
+   if(normalizar(msg) === "tiksexo"){
+   
+mostrar("01 - https://tiksexo.com/video/porno-doido-novinha-gemendo-na-pica-do-tio/")
+
+mostrar("02 - https://tiksexo.com/video/porno-seguro-minha-namorada-sentando-em-mim/")
+
+mostrar("03 - https://tiksexo.com/video/enrabou-a-novinha-de-quatro-comeu-e-gozou-na-cara-4/")
+
+mostrar("04 - https://tiksexo.com/video/mulher-nua-tomando-banho-pelada-no-chuveiro/")
+
+mostrar("05 - https://tiksexo.com/video/gozando-na-buceta-da-irma-pra-postar-no-d4swing/")
+
+mostrar("06 - https://tiksexo.com/video/emily-ferrer-e-clara-wellen-peladas-se-pegando/")
+
+mostrar("07 - https://tiksexo.com/video/video-metendo-na-bucetinha-ate-os-ovos/")
+
+mostrar("08 - https://tiksexo.com/video/pornu-coroa-gozando-em-cima-da-rola-do-marido/")
+
+mostrar("09 - https://tiksexo.com/video/cibelly-ferreira-nua-pelada-mostrando-a-buceta/")
+   
+   input.value = "";
+   return
+}
+   
+   
+   
+   
+   
+   
+   // ------------------------------------------
+   // Deviantart
+   // ------------------------------------------
+   
+   if(normalizar(msg) === "deviantart"){
+
+ 
+mostrar("01 - https://www.deviantart.com/karlkarleone/art/Zero-Two-1183169756#image-1")
+
+mostrar("02 - https://www.deviantart.com/karlkarleone/art/Zero-Two-1183170021#image-4")
+
+mostrar("03 - https://www.deviantart.com/desariavore/art/Marin-Kitagawa-from-My-Dress-Up-Darling-1261818716")
+
+mostrar("04 - https://www.deviantart.com/desariavore/art/Marin-Kitagawa-from-My-Dress-Up-Darling-1283109415")
+
+mostrar("05 - https://www.deviantart.com/naughtyaiart/art/RezeXDenji-1301962154")
+
+mostrar("06 - https://www.deviantart.com/aigengen/art/Kafka-1323168193")
+
+mostrar("07 - https://www.deviantart.com/shadowrealmarts/art/Kafka-1072358798")
+
+mostrar("08 - https://www.deviantart.com/onairlline/art/26-1286626263")
+
+mostrar("09 - https://www.deviantart.com/keishi0505/art/Marin-1247033770")
+
+mostrar("10 - https://www.deviantart.com/eclipseviolet/art/Kafka-Raiden-10-1299780336")
+
+mostrar("11 - https://www.deviantart.com/eclipseviolet/art/Kafka-5-1299779939")
+
+mostrar("12 - https://www.deviantart.com/eclipseviolet/art/Kafka-Raiden-1-1299779007")
+
+mostrar("13 - https://www.deviantart.com/eclipseviolet/art/Kafka-Raiden-11-1299780268")
+
+mostrar("14 - https://www.deviantart.com/eclipseviolet/art/Kafka-Raiden-7-1299778486")
+
+mostrar("15 - https://www.deviantart.com/eclipseviolet/art/Kafka-Raiden-5-1299778650")
+
+mostrar("16 - https://www.deviantart.com/elen1art/art/Bewitching-Acheron-5-1351733626")
+
+mostrar("17 - https://www.deviantart.com/elen1art/art/Bewitching-Acheron-6-1351733442")
+
+mostrar("18 - https://www.deviantart.com/elen1art/art/Bewitching-Acheron-4-1351733415")
+
+mostrar("19 - https://www.deviantart.com/doseofbeauty/art/Counselor-Changli-1063571280")
+
+mostrar("20 - https://www.deviantart.com/elen1art/art/Feixiao-s-morning-routine-3-6-1102049843")
+
+mostrar("21 - https://www.deviantart.com/minazuki0606/art/Sparkle-Selfie-1294634032?file=1")
+
+
+   input.value = "";
+   return
+
+}
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                                 Links
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                               TRADUTOR 🌎
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+if(normalizar(msg) === "tradutor"){
+
+  modoTradutor = true;
+
+  mostrarTradutor("ㅤ");
+  mostrarTradutor("ㅤ");
+  mostrarTradutor("🌐 Modo tradutor ativado (pt → en)");
+
+  return;
+}
+
+if(modoTradutor){
+
+  traduzirTexto(msg);
+  return;
+}
+
+if(normalizar(msg) === "sair"){
+
+  modoTradutor = false;
+
+  mostrarTradutor("🚪 Saiu do modo tradutor.", "bot");
+
+  return;
+}
+
+if(msg.startsWith("idioma")){
+
+  let partes = msg.split(" ");
+
+  if(partes.length < 3){
+    mostrarTradutor("⚠️ Use: idioma pt en", "bot");
+    return;
+  }
+
+  idiomaOrigem = partes[1];
+  idiomaDestino = partes[2];
+
+  mostrarTradutor(`🌐 Idioma alterado: ${idiomaOrigem} → ${idiomaDestino}`);
+
+
+  return;
+}
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                               TRADUTOR 🌎
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                              🖼️ IMAGENS 📷
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+if(msg === "foto"){
+
+  mostrar("Aqui está:", "bot");
+
+  enviarImagem("https://www.dropbox.com/scl/fi/83h1ycxgpmc9n2jwikg4h/Dominatriz-1.jpg?rlkey=gw1m78xyejnsf2yl34876kgre&e=1&raw=1");
+  
+
+  input.value = "";
+  return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                                Emcurta Link 🖇️
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+// 🔗 encurtador
+if(msg.startsWith("/")){
+
+  let url = msg.replace("/","").trim();
+
+  if(url === ""){
+    mostrar("⚠️ Envie um link junto.", "bot");
+    return;
+  }
+
+  mostrar("🔄 Encurtando link...", "bot");
+
+  encurtarLink(url).then(linkCurto=>{
+    mostrar("👻ㅤ" + linkCurto, "bot");
+  });
+
+  input.value = "";
+  return;
+}
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                                Emcurta Link 🖇️
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                              📂 NUVENS ☁️
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+if(normalizar(msg) === "mega"){
+
+  window.open("https://mega.nz/fm/jNg1WRoC");
+  digitarEEnviar("Espero ter consseguido tudo oque queria!");
+
+  input.value = "";
+  return;
+}
+
+
+
+if(normalizar(msg) === "ia audio"){
+    
+    window.open("https://typecast.ai/text-to-speech");
+    
+    input.value = "";
+    return
+}
+
+
+
+if(normalizar(msg) ==="dropbox"){
+    
+  window.open("https://www.dropbox.com/home");
+  digitarEEnviar("É sempre bom poder te ajudar!");
+  
+  input.value = "";
+  return
+}
+
+
+
+if(normalizar(msg) ==="you"){
+    digitarEEnviar("hummm, seu safadinho, vendo coisas de adulto né");
+    window.open("https://br.youporn.com/");
+    
+    input.value = "";
+    return
+}
+
+
+
+
+if(normalizar(msg) === "fire"){
+    digitarEEnviar("Media Fire... Um otimo site para Download's");
+    window.open("https://app.mediafire.com/folder/myfiles");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "remove"){
+    window.open("https://dewatermark.ai/pt");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "gov"){
+    window.open("https://www.gov.br/pt-br");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "wallpaper"){
+    window.open("https://www.dropbox.com/scl/fi/e4ippl914nk0svrdaujw0/Wallpaper-Kafka.jpg?rlkey=1e04k4frhdku38vbs4i5hsfml&e=2&raw=1");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "audio converter"){
+    window.open("https://convertio.co/pt/");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "take"){
+    window.open("https://take-top.com/free-instagram-promotion");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "traduzir"){
+    window.open("https://translate.google.com/?hl=pt-PT&tab=TT&sl=pt&tl=en&op=translate");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "samantha flair"){
+    window.open("https://sangonomiapk-debug.github.io/Samantha-Flair---Site/");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "isabella monteiro"){
+    window.open("https://sangonomiapk-debug.github.io/Isabella-Monteiro---Site/");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "nudes vazados"){
+    window.open("https://sangonomiapk-debug.github.io/Site---Nudes-vazados/");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "git"){
+    window.open("https://github.com/?locale=pt-br");
+    
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "audio"){
+    window.open("https://vocalremover.org/pt/cutter");
+        
+    input.value = "";
+    return
+}
+
+if(normalizar(msg) === "cam"){
+    window.open("https://cameraprive.com/br/circe-m");
+    
+    input.value = "";
+    return
+}
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                                🗣️ AUDIO 🔊
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+ 
+if(msg === "teste"){
+
+  const chat = document.getElementById("chat");
+
+  const audio = document.createElement("audio");
+  audio.src = "https://www.dropbox.com/scl/fi/u9e3mvwkgvxsawq4mt6gq/Kafka.mp3?rlkey=e0pf8pzcmc23t7c75ji1mmddf&raw=1";
+  
+  digitarEEnviar("˙ 𓂀 𝑅𝑒𝑠𝑝𝑜𝑠𝑡𝑎 𝑑𝑒 𝑡𝑒𝑠𝑡𝑒 𝑟𝑒𝑐𝑒𝑏𝑖𝑑𝑎 𝑐𝑜𝑚 𝑆𝑢𝑐𝑒𝑠𝑠𝑜!!!", "bot");
+  audio.autoplay = false;
+
+
+  chat.appendChild(audio);
+
+  input.value = "";
+  return;
+}
+
+
+
+
+const musicas = [
+  "https://www.dropbox.com/scl/fi/55ojn6kusy02l6ezdzcb3/N-w-ng.opus?rlkey=f0gh36qk7hh1khcnepjj1k4ni&raw=1",
+  
+  "https://www.dropbox.com/scl/fi/9tk57bx6dii2936kldk0x/Let-the-World-burn.mp3?rlkey=jeg16yme4953okce08048wrb1&st=0e4t7r9t&raw=1",
+  
+  "https://www.dropbox.com/scl/fi/m0htp98kpw7wmxafc1tse/Derniere-danse.mp3?rlkey=9ydcgo5wuk9jk3pehrjzt8w0q&st=737b2gx9&raw=1",
+  
+  "https://www.dropbox.com/scl/fi/a79nmery2kd93agppnmfp/Love-Story.mp3?rlkey=ekjvbf0divmnd1q87vdt6a2zm&st=d855rede&raw=1",
+  
+  "https://www.dropbox.com/scl/fi/41hor5ywey8p8hyog0psi/.mp3?rlkey=yq4thp4sesejp6bhi6h25f77d&st=bw9smpel&raw=1",
+  
+];
+
+
+
+if(msg === "musicas"){
+
+  let lista = [...musicas]; // copia
+
+  // embaralhar
+  lista.sort(() => Math.random() - 0.5);
+
+  let i = 0;
+
+  function tocar(){
+
+    if(i >= lista.length){
+      mostrar("🎵 Playlist finalizada.", "bot");
+      return;
+    }
+
+    const audio = new Audio(lista[i]);
+
+    mostrar("🎵 Tocando música " + (i+1), "bot");
+
+    audio.play();
+
+    audio.onended = () => {
+      i++;
+      tocar();
+    };
+
+  }
+
+  tocar();
+  return;
+}
+
+
+
+
+
+
+
+
+
+
+if(msg === "hinos"){
+    
+    const chat = document.getElementById("chat");
+
+    digitarEEnviar("🎼 Reproduzindo Música...");
+
+    setTimeout(() => {
+
+        const audio = document.createElement("audio");
+        audio.src = "https://www.dropbox.com/scl/fi/9dwslvlyb1mhksx6pabqp/Jesus-ta-La-Melhor-Amigo.mp3?rlkey=eopmxgwwre6pohs1cwqes3sla&st=n2hn4e4g&raw=1"; // com ?raw=1
+        audio.controls = true;
+        audio.autoplay = false;
+
+        chat.appendChild(audio);
+        chat.scrollTop = chat.scrollHeight;
+
+    }, 1000); // tempo de espera
+
+    input.value = "";
+    return;
+}
+
+
+
+if(msg === "fala ara ara"){
+
+  const chat = document.getElementById("chat");
+
+  const audio = document.createElement("audio");
+  audio.src = "https://www.dropbox.com/scl/fi/pud7t56gks4vasf5v4uqn/Ara-ara.mp3?rlkey=dht3cn5r9soafcw5s06q365yj&st=ejqy4hoc&raw=1"
+  digitarEEnviar("Ara Ara...!")
+  audio.autoplay = true;
+
+
+  chat.appendChild(audio);
+
+  input.value = "";
+  return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                              Conselhos 💭
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+
+if(msg.toLowerCase() === "conselho"){
+
+  let aleatorio = conselhos[Math.floor(Math.random() * conselhos.length)];
+
+  mostrar("ㅤ🧠ㅤ" + aleatorio, "bot");
+  return;
+}
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                              Conselhos 💭
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                              SALVAR ITENS 📂
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+   // ------------------------------------------
+   // SALVAR 🗃️
+   // ------------------------------------------
+
+if(msg.startsWith("&salvar")){
+
+  let texto = msg.replace("&salvar","").trim();
+
+  let partes = texto.split(" ");
+  let chave = partes.shift(); // nome
+  let valor = partes.join(" "); // resto
+
+  if(!chave || !valor){
+    mostrar("⚠️ Use: &salvar nome valor", "bot");
+    return;
+  }
+
+  banco[chave] = valor;
+
+  localStorage.setItem("banco", JSON.stringify(banco));
+
+  mostrar("💾 Salvo com sucesso!", "bot");
+
+  input.value = "";
+  return;
+}
+
+
+
+   // ------------------------------------------
+   // VER 🕵🏻
+   // ------------------------------------------
+   
+if(msg === "&ver"){
+
+  let lista = "📂 Seus dados:\n\n";
+
+  for(let chave in banco){
+    lista += chave + " → " + banco[chave] + "\n";
+  }
+
+  mostrar(lista, "bot");
+
+  return;
+}
+
+
+
+   // ------------------------------------------
+   // VER 🔍
+   // ------------------------------------------
+   
+if(msg.startsWith("&buscar")){
+
+  let chave = msg.replace("&buscar","").trim();
+
+  if(banco[chave]){
+    mostrar("🔎 " + chave + " → " + banco[chave], "bot");
+  }else{
+    mostrar("❌ Não encontrado", "bot");
+  }
+
+  return;
+}
+
+
+
+
+   // ------------------------------------------
+   // DELETAR 🗑️
+   // ------------------------------------------
+
+if(msg.startsWith("&deletar")){
+
+  let chave = msg.replace("&deletar","").trim();
+
+  if(banco[chave]){
+    delete banco[chave];
+    localStorage.setItem("banco", JSON.stringify(banco));
+    mostrar("🗑️ Deletado!", "bot");
+  }else{
+    mostrar("❌ Não encontrado", "bot");
+  }
+
+  return;
+}
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                                MINI-GAME 🎮🕹️                           
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+  
+  
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  PEDRA PAPEL TESOURA...✊🏻
+   // ------------------------------------------
+    
+    if(normalizar(msg) === "ppt"){
+  iniciarPPT();
+  return;
+}
+
+    if(normalizar(msg) === "jogo3"){
+  iniciarPPT();
+  return;
+}
+  
+  
+if(pptAtivo){
+
+  let escolha = normalizar(msg);
+
+  if(escolha === "pedra" || escolha === "papel" || escolha === "tesoura"){
+    jogarPPT(escolha);
+  }else{
+    digitarEEnviar("Escolha pedra, papel ou tesoura.",600);
+  }
+
+  return;
+}
+
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  PEDRA PAPEL TESOURA...✊🏻
+   // ------------------------------------------
+
+  
+  
+
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  #️⃣ JOGO DA VELHA #️⃣
+   // ------------------------------------------
+    
+    if (normalizar(msg) === "jogo2") {
+  iniciarVelha();
+  return;
+}
+  
+    
+  if (normalizar(msg) === "velha") {
+  iniciarVelha();
+  return;
+}
+  
+  if (velhaAtiva) {
+  let pos = parseInt(msg) - 1;
+  
+  
+
+  if (!isNaN(pos) && tabuleiro[pos] === "") {
+
+    tabuleiro[pos] = "❌";
+
+    
+
+  
+  
+    mostrarTabuleiro();
+  }
+
+  return;
+}
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  JOGO DA VELHA... #️⃣
+   // ------------------------------------------
+  
+  
+  
+   
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  🎯 ADIVINHAÇÃO 🎯
+   // ------------------------------------------
+  
+ if (normalizar(msg) === "jogo1") {
+  iniciarJogo();
+  return;
+}
+  
+  
+  
+if (normalizar(msg) === "adivinhar") {
+  iniciarJogo();
+  return;
+}
+
+
+if (jogoAtivo) {
+  let palpite = parseInt(msg);
+
+  if (!isNaN(palpite)) {
+    tentativas--;
+
+    if (palpite === numeroSecreto) {
+      jogoAtivo = false;
+      digitarEEnviar("Você acertou.", 800);
+      setTimeout(() => {
+        digitarEEnviar("Impressionante.ㅤㅤㅤㅤㅤVamos denovo?", 800);
+      }, 1000);
+      return;
+    }
+
+    if (tentativas > 0) {
+
+      if (palpite < numeroSecreto) {
+        digitarEEnviar("Mais alto.", 800);
+      } else {
+        digitarEEnviar("Mais baixo.", 800);
+      }
+
+      setTimeout(() => {
+        digitarEEnviar("Tentativas restantes: " + tentativas, 800);
+      }, 1000);
+
+    } else {
+      jogoAtivo = false;
+      digitarEEnviar("Você perdeu.", 800);
+      setTimeout(() => {
+        digitarEEnviar("O número era " + numeroSecreto + ".", 800);
+      }, 1000);
+    }
+
+    return;
+  }
+}
+  
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  ADIVINHAÇÃO... 🎯
+   // ------------------------------------------
+   
+   
+   
+   
+   
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  JOGO DA MEMORIA 🧠
+   // ------------------------------------------
+   
+   if(normalizar(msg)==="memoria"){
+  iniciarMemoriaVisual();
+  return;
+}
+
+if(normalizar(msg)==="Jogo4"){
+  iniciarMemoriaVisual();
+  return;
+}
+
+if(memoriaAtivo){
+
+  verificarMemoria(msg.trim());
+  input.value = "";
+  return;
+
+}
+   
+   
+   // ------------------------------------------
+   // ˙ㅤ✦°⪩  JOGO DA MEMORIA 🧠
+   // ------------------------------------------
+   
+   
+   
+  
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                                MINI-GAME 🎮🕹️                           
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                  FONTES 👻                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+if(msg.startsWith("@")){
+
+  let nome = msg.replace("@","").trim();
+
+  if(nome === ""){
+    mostrar("⚠️ Digite um nome após @", "bot");
+    return;
+  }
+
+  mostrarMenuFontes(nome);
+
+  input.value = "";
+  return;
+}
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                  FONTES 👻                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+//                           BOTÃO DE LIMPAR CHAT 📌
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+  document.getElementById("btnLimpar").onclick = limparChat;
+  document.getElementById("btnLimpar").onclick = function() {
+
+  const chat = document.getElementById("chat");
+
+  // Limpa todas as mensagens
+  chat.innerHTML = "";
+
+  // Reseta mini-games
+  velhaAtiva = false;   // Jogo da Velha
+  pptAtivo = false;     // Pedra, Papel e Tesoura
+  digitarAtivo = false; // Mini-game de digitação
+
+  // Opcional: resetar tabuleiro ou pontuação
+  tabuleiro = ["", "", "", "", "", "", "", "", ""];
+  pontuacao = 0;
+
+  // Mensagem de confirmação
+  adicionarMensagem("Chat limpo!", "ia");
+}
+  
+  
+if(normalizar(msg) === "."){
+    
+    
+}
+if(normalizar(msg) === "w"){
+  limparChat();
+  return;
+}
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+//                           BOTÃO DE LIMPAR CHAT 📌
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+  
+
+
+
+
+
+
+
+// ===========================================================================
+//                 👻 𓆩𓂀𓆪 Fim do "Menssagem Enviar( )" 👻
+// ===========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===========================================================================
+//                             FUNCAOÇÃO MOSTRAR ⚙️
+// ===========================================================================
+  let respostaEncontrada = respostaPadrao;
+  for(let trigger in respostas){
+    if(normalizar(trigger) === normalizar(msg)){
+      respostaEncontrada = respostas[trigger];
+      break;
+    }
+  }
+
+  if (Array.isArray(respostaEncontrada)) {
+  // envia cada mensagem com um pequeno delay
+  respostaEncontrada.forEach((texto, i) => {
+  setTimeout(() => {
+    let tempo = texto.length * 5; // 10ms por caractere
+digitarEEnviar(texto, tempo);
+  }, i * 500);
+});
+} else {
+  digitarEEnviar(respostaEncontrada, 500);
+}
+}
+
+
+
+
+function mostrar(texto, classe){
+  const div = document.createElement('div');
+  div.className = classe; if (classe === "ia" && jogoAtivo) {
+    div.classList.add("modo-jogo");
+  }
+  
+  div.innerHTML = transformarLinks(texto);
+  const chat = document.getElementById('chat');
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+
+
+
+function digitarEEnviar(texto, atraso) {
+  const chat = document.getElementById('chat');
+
+  const digitando = document.createElement('div');
+  digitando.className = 'ia digitando'; // adicionamos classe extra
+  digitando.textContent = "•••";
+  chat.appendChild(digitando);
+  chat.scrollTop = chat.scrollHeight;
+
+  setTimeout(() => {
+    chat.removeChild(digitando);
+    mostrar(texto, 'ia');
+  }, atraso);
+}
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===========================================================================
+// MENU 📌
+// ===========================================================================
+
+
+
+
+function meuMenu() {
+
+  const mensagensMenu = [
+  "ㅤ",
+  "ㅤ",
+  "꧁✦ೄᬽ♚༺👑༻♚ೄᬽ✦꧂",
+  "ㅤㅤㅤㅤㅤㅤ𝐌𝐄𝐍𝐔",
+  "ㅤ",
+  "ㅤㅤㅤㅤㅤ𝗣𝗥𝗘𝗙𝗜𝗫𝗢𝗦",
+  "✍🏻ㅤ@ㅤ(Fontes)", 
+  "♻️ㅤ$ㅤ(Link's Drive)", 
+  "🖇️ㅤ/ㅤ(Emcurtador)",
+  "🗣ㅤTraduzir (Tradutor)",
+  "ㅤ",
+  "ㅤㅤㅤㅤ𝗦𝗔𝗟𝗩𝗔𝗠𝗘𝗡𝗧𝗢𝗦",
+  "📂ㅤ&salvar (Salvar item)",
+  "🕵🏻ㅤ&ver (Ver item)",
+  "🔍ㅤ&buscar (buscar item)",
+  "🗑️ㅤ&deletar (apagar item)",
+  "ㅤ",
+  "ㅤㅤㅤ 𝗠𝗘𝗠𝗢𝗥𝗜𝗔 𝗘𝗠 𝗡𝗨𝗩𝗘𝗠",
+  "☁️ㅤMegaㅤ(mega)",
+  "☁️ㅤDropboxㅤ(dropbox)",
+  "☁️ㅤMedia fireㅤ(fire)",
+  "ㅤ",
+  "ㅤ",
+  "ㅤ",
+  "ㅤ",
+
+  ];
+
+  mensagensMenu.forEach((texto, i) => {
+    setTimeout(() => {
+      mostrarMenu(texto);
+    }, i * 0);
+  });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===========================================================================
+// MENU VERMELHO 📌
+// ===========================================================================
+function mostrarMenu(texto) { 
+  const div = document.createElement('div');
+  div.className = 'ia menuMensagem';
+  div.textContent = texto;
+
+  const chat = document.getElementById('chat');
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===========================================================================
+// LINK CLICAVEÁVEL 📌
+// ===========================================================================
+function transformarLinks(texto) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+  return texto.replace(urlRegex, function(url) {
+    return `<a href="${url}" target="_blank" style="
+    color:#CBD1FF; 
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+   -1px  1px 0 #000,
+    1px  1px 0 #000;
+   
+    ">${url}</a>`;
+  });
+}                    //kafka = #9E377D
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                                MINI-GAME 🎮🕹️                           //
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  🧠 JOGO DA MEMORIA 🧠
+   // ------------------------------------------//
+function iniciarMemoria(){
+
+  memoriaAtivo = true;
+  sequenciaMemoria = [];
+  nivelMemoria = 0;
+
+  digitarEEnviar("Jogo da memória iniciado.");
+  proximaRodada();
+
+}
+
+function proximaRodada(){
+
+  nivelMemoria++;
+
+  let numero = Math.floor(Math.random()*9)+1;
+  sequenciaMemoria.push(numero);
+
+  digitarEEnviar("Nível " + nivelMemoria);
+
+  setTimeout(() => {
+    digitarEEnviar(sequenciaMemoria.join(" "));
+  },800);
+
+}
+
+function verificarMemoria(resposta){
+
+  if(resposta === sequenciaMemoria.join(" ")){
+
+    digitarEEnviar("Correto.");
+    setTimeout(() => {
+      proximaRodada();
+    },1000);
+
+  }else{
+
+    digitarEEnviar("Errado.");
+    digitarEEnviar("Você chegou ao nível " + nivelMemoria);
+    memoriaAtivo = false;
+
+  }
+
+}
+//embaralhar
+function embaralhar(array){
+  for(let i=array.length-1;i>0;i--){
+    let j=Math.floor(Math.random()*(i+1));
+    [array[i],array[j]]=[array[j],array[i]];
+  }
+}
+// tabuleiro
+function iniciarMemoriaVisual(){
+    
+  const antigo = document.getElementById("memoriaTabuleiro");
+
+if (antigo) {
+    antigo.remove();
+}
+
+  memoriaJogoAtivo = true;
+  memoriaCartas = [...emojisMemoria];
+  memoriaSelecionadas = [];
+
+  embaralhar(memoriaCartas);
+
+  const chat = document.getElementById("chat");
+
+  const tabuleiro = document.createElement("div");
+  tabuleiro.className="memoria-tabuleiro";
+  tabuleiro.id="memoriaTabuleiro";
+
+  memoriaCartas.forEach((emoji,index)=>{
+
+    const btn = document.createElement("button");
+    btn.className="memoria-carta";
+    btn.dataset.index=index;
+    btn.innerText="❓";
+
+    btn.onclick=()=>{
+      clicarCarta(btn,index);
+    };
+
+    tabuleiro.appendChild(btn);
+
+  });
+
+  chat.appendChild(tabuleiro);
+  chat.scrollTop=chat.scrollHeight;
+
+  revelarTudo();
+}
+
+//mostrar todos por 2 segundos
+function revelarTudo(){
+
+  const botoes=document.querySelectorAll(".memoria-carta");
+
+  botoes.forEach((btn,i)=>{
+    btn.innerText=memoriaCartas[i];
+  });
+
+  setTimeout(()=>{
+
+    botoes.forEach(btn=>{
+      btn.innerText="❓";
+    });
+
+  },1000);
+
+}
+// clicar carta
+function clicarCarta(btn,index){
+    
+    if(btn.disabled) return;
+
+if(memoriaSelecionadas.some(carta => carta.index === index)){
+    return;
+}
+
+  if(!memoriaJogoAtivo) return;
+  if(memoriaSelecionadas.length>=2) return;
+
+  btn.innerText=memoriaCartas[index];
+
+  memoriaSelecionadas.push({btn,index});
+
+  if(memoriaSelecionadas.length===2){
+
+    let a=memoriaSelecionadas[0];
+    let b=memoriaSelecionadas[1];
+
+if(memoriaCartas[a.index]===memoriaCartas[b.index]){
+
+  a.btn.disabled = true;
+  b.btn.disabled = true;
+
+  memoriaSelecionadas = [];
+
+  verificarVitoriaMemoria();
+
+}
+    else{
+
+      setTimeout(()=>{
+        a.btn.innerText="❓";
+        b.btn.innerText="❓";
+        memoriaSelecionadas=[];
+      },900);
+
+    }
+
+  }
+
+}
+
+//verificar vitoria
+function verificarVitoriaMemoria(){
+
+  const botoes = document.querySelectorAll(".memoria-carta");
+
+  let todasAbertas = true;
+
+  botoes.forEach(btn=>{
+    if(!btn.disabled){
+      todasAbertas = false;
+    }
+  });
+
+  if(todasAbertas){
+
+    digitarEEnviar("🎉 Você encontrou todos os pares, Parabéns!!!");
+
+    memoriaJogoAtivo = false;
+
+  }
+
+}
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩   JOGO DA MEMORIA... 🧠
+   // ------------------------------------------//
+
+
+
+
+
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  ✊🏻 PEDRA PAPEL TESOURA ✊🏻
+   // ------------------------------------------//
+function iniciarPPT(){
+
+  pptAtivo = true;
+  digitarEEnviar("≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈", 300)
+  digitarEEnviar("ㅤ",400);
+  digitarEEnviar("🕹️ㅤVamos jogarㅤ🤖." ,500);
+  digitarEEnviar("Pedra, Papel ou Tesoura?",600);
+
+  setTimeout(() => {
+    mostrarBotoesPPT();
+  },700);
+}
+
+
+function jogarPPT(escolhaUsuario){
+  const opcoes = [,"pedra","papel","tesoura"];
+  const escolhaIA = opcoes[Math.floor(Math.random()*3)];
+  digitarEEnviar("ㅤ", 500);
+  digitarEEnviar("Eu escolhi " + escolhaIA + ".", 700);
+
+  if(escolhaUsuario === escolhaIA){
+    digitarEEnviar("Empate 🤝", 1000);
+  }
+
+  else if(
+    (escolhaUsuario === "pedra" && escolhaIA === "tesoura") ||
+    (escolhaUsuario === "papel" && escolhaIA === "pedra") ||
+    (escolhaUsuario === "tesoura" && escolhaIA === "papel")
+  ){
+    digitarEEnviar("Você venceu 👑", 1000);
+  }
+
+  else{
+    digitarEEnviar("Eu venci 👑", 1000);
+  }
+
+  
+  pptAtivo = false;
+}
+
+
+
+function mostrarBotoesPPT(){
+
+  const chat = document.getElementById("chat");
+
+  const area = document.createElement("div");
+  area.className = "ppt-botoes";
+
+  const opcoes = [
+    {nome:"pedra", emoji:"🪨"},
+    {nome:"papel", emoji:"📄"},
+    {nome:"tesoura", emoji:"✂️"}
+  ];
+
+  opcoes.forEach(op => {
+
+    const btn = document.createElement("button");
+    btn.className = "ppt-btn";
+    btn.innerText = op.emoji;
+
+    btn.onclick = function(){
+      jogarPPT(op.nome);
+      area.remove();
+    };
+
+    area.appendChild(btn);
+  });
+
+  chat.appendChild(area);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  PEDRA PAPEL TRSOURA... ✊🏻
+   // ------------------------------------------//
+
+
+
+
+  
+  
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  🎯 ADIVINHAÇÃO 🎯
+   // ------------------------------------------//
+
+function iniciarJogo() {
+  numeroSecreto = Math.floor(Math.random() * 10) + 1; // número entre 1 e 10
+  tentativas = 3;
+  jogoAtivo = true;
+  digitarEEnviar("≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈", 700)
+
+  digitarEEnviar("🕹️ㅤVamos jogarㅤ🤖.", 800);
+  setTimeout(() => {
+    digitarEEnviar("ㅤ", 800);
+  }, 1000);
+  setTimeout(() => {
+    digitarEEnviar("Estou pensando em um número de 𝟭 a 𝟭𝟬, tente advinhar.", 800);
+  }, 2000);
+  setTimeout(() => {
+    digitarEEnviar("Você tem 3 tentativas.", 800);
+  }, 3000);
+}
+ 
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  ADIVINHAÇÃO... 🎯
+   // ------------------------------------------//
+
+
+
+
+
+
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  #️⃣ JOGO DA VELHA #️⃣
+   // ------------------------------------------//
+function iniciarVelha() {
+
+  removerTabuleiroAntigo(); // remove o antigo
+
+  velhaAtiva = true;
+  digitarEEnviar("ㅤ",400);
+  digitarEEnviar("🕹️ㅤVamos jogarㅤ🤖." ,500);
+  tabuleiro = ["", "", "", "", "", "", "", "", "",];
+
+  criarTabuleiroVisual();
+}
+
+function mostrarTabuleiro() {
+
+  let t = tabuleiro.map((v, i) => v === "" ? (i+1).toString() : v);
+
+  let linha1 = t[0] + " | " + t[1] + " | " + t[2];
+  let linha2 = t[3] + " | " + t[4] + " | " + t[5];
+  let linha3 = t[6] + " | " + t[7] + " | " + t[8];
+
+  digitarEEnviar(linha1, 300);
+  digitarEEnviar("────────────", 200);
+  setTimeout(() => digitarEEnviar(linha2, 600), 400);
+  setTimeout(() => digitarEEnviar(linha3, 900), 800);
+}
+
+function verificarVitoria(simbolo) {
+  const combinacoes = [
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]
+  ];
+
+  return combinacoes.some(c =>
+    tabuleiro[c[0]] === simbolo &&
+    tabuleiro[c[1]] === simbolo &&
+    tabuleiro[c[2]] === simbolo
+  );
+}
+
+function jogadaIA() {
+
+  // Primeiro, tenta vencer
+  for (let i = 0; i < 9; i++) {
+    if (tabuleiro[i] === "") {
+      tabuleiro[i] = "⭕";
+      if (verificarVitoria("⭕")) return;
+      tabuleiro[i] = "";
+    }
+  }
+
+  // Depois, bloqueia o jogador
+  for (let i = 0; i < 9; i++) {
+    if (tabuleiro[i] === "") {
+      tabuleiro[i] = "❌";
+      if (verificarVitoria("❌")) {
+        tabuleiro[i] = "⭕"; // bloqueia
+        return;
+      }
+      tabuleiro[i] = "";
+    }
+  }
+
+  // Se centro livre, pega o centro
+  if (tabuleiro[4] === "") {
+    tabuleiro[4] = "⭕";
+    return;
+  }
+
+  // Se cantos livres, pega um canto aleatório
+  const cantos = [0, 2, 6, 8].filter(i => tabuleiro[i] === "");
+  if (cantos.length > 0) {
+    const escolha = cantos[Math.floor(Math.random() * cantos.length)];
+    tabuleiro[escolha] = "⭕";
+    return;
+  }
+
+  // Qualquer lateral livre
+  const lados = [1, 3, 5, 7].filter(i => tabuleiro[i] === "");
+  if (lados.length > 0) {
+    const escolha = lados[Math.floor(Math.random() * lados.length)];
+    tabuleiro[escolha] = "⭕";
+    return;
+  }
+}
+
+
+function criarTabuleiroVisual() {
+
+  const chat = document.getElementById("chat");
+
+  const grade = document.createElement("div");
+  grade.className = "tabuleiro";
+  grade.id = "gradeVelha";
+
+  for (let i = 0; i < 9; i++) {
+    const btn = document.createElement("button");
+    btn.className = "casa";
+    btn.dataset.index = i;
+
+    btn.onclick = function () {
+      jogar(i);
+    };
+
+    grade.appendChild(btn);
+  }
+
+  chat.appendChild(grade);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+function jogar(pos) {
+
+  if (!velhaAtiva) return;
+  if (tabuleiro[pos] !== "") return;
+
+  tabuleiro[pos] = "❌";
+  atualizarTabuleiro();
+
+  if (verificarVitoria("❌")) {
+    velhaAtiva = false;
+    digitarEEnviar("Você venceu.ㅤㅤEu quero uma revanche.", 600);
+    desativarTabuleiro();
+    return;
+  }
+
+  setTimeout(() => {
+    jogadaIA();
+    atualizarTabuleiro();
+
+    if (verificarVitoria("⭕")) {
+      velhaAtiva = false;
+      digitarEEnviar("Eu venci.ㅤㅤVamos jogar denovo?.", 600);
+      desativarTabuleiro();
+      return;
+    }
+
+    if (!tabuleiro.includes("")) {
+      velhaAtiva = false;
+      digitarEEnviar("Empate. ㅤㅤ Eu te desafio.", 600);
+      desativarTabuleiro();
+    }
+
+  }, 600);
+}
+
+
+function atualizarTabuleiro() {
+  const botoes = document.querySelectorAll(".casa");
+
+  botoes.forEach((btn, i) => {
+    btn.textContent = tabuleiro[i];
+    if (tabuleiro[i] !== "") {
+      btn.disabled = true;
+    }
+  });
+}
+
+
+function desativarTabuleiro() {
+  const botoes = document.querySelectorAll(".casa");
+  botoes.forEach(btn => btn.disabled = true);
+}
+
+
+function removerTabuleiroAntigo() {
+  const antigo = document.getElementById("gradeVelha");
+  if (antigo) {
+    antigo.remove();
+  }
+}
+
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  JOGO DA VELHA... #️⃣
+   // ------------------------------------------//
+   
+   
+   
+   
+   
+   
+   
+   
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  SPACE SURVIVOR 🚀
+   // ------------------------------------------//
+   
+   function spaceSurvivor() {
+    
+    window.open("https://support-adm-debug.github.io/Selena/");
+
+    digitarEEnviar("≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈", 500)
+    digitarEEnviar("Space Suvivor - Sobreviva o Maximo possível", 600);
+    
+    
+    input.value = "";
+    return
+}
+
+
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  SPACE SURVIVOR... 🚀
+   // ------------------------------------------//
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   // ------------------------------------------//
+   // ˙ㅤ✦°⪩  MENU MINIGAME  🌿
+   // ------------------------------------------//
+   function minigame(){
+
+  const chat = document.getElementById("chat");
+
+  const menu = document.createElement("div");
+  menu.className = "mensagem bot";
+
+  menu.innerHTML = `
+    <div>🎮 Menu de Jogos</div><br>
+
+    <button onclick="iniciarJogo()">🎯 Jogo1</button><br><br>
+
+    <button onclick="iniciarVelha()">❌ Jogo2</button><br><br>
+
+    <button onclick="iniciarPPT()">✊ Jogo3</button><br><br>
+    
+    <button onclick="iniciarMemoriaVisual()">🧠 Jogo4</button><br><br>
+    
+    <button onclick="spaceSurvivor()">🚀 Jogo5</button><br><br>
+  `;
+
+  chat.appendChild(menu);
+  chat.scrollTop = chat.scrollHeight;
+
+}
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                               MINI-GAME 🎮🕹️                         //
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+//                           BOTÃO DE LIMPAR CHAT 📌
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+
+
+function limparChat(){
+
+  const chat = document.getElementById("chat");
+
+
+
+  // efeito visual
+  chat.style.transition = "0.3s";
+  chat.style.filter = "blur(6px)";
+  chat.style.opacity = "0";
+
+  setTimeout(() => {
+
+    // limpa chat
+    chat.innerHTML = "";
+
+    // reset jogos
+    velhaAtiva = false;
+    pptAtivo = false;
+    digitarAtivo = false;
+
+    // reset dados
+    tabuleiro = ["", "", "", "", "", "", "", "", ""];
+    pontuacao = 0;
+
+    // volta ao normal
+    chat.style.filter = "blur(0px)";
+    chat.style.opacity = "1";
+
+    // mensagem
+    adicionarMensagem("🧹 Chat limpo!", "ia");
+
+  }, 900);
+}
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+//                           BOTÃO DE LIMPAR CHAT 📌
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+  
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+//                               BOTÕES 🕹️
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+   //Botão itch.io
+   function itch() {
+   digitarEEnviar("ㅤ", 1);
+   digitarEEnviar("Bem vindo ao itch.io !!", 5);
+   
+   window.open("https://itch.io/c/4562920/jogos-18-online");
+   
+   input.value = "";
+   return
+   }
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+//                               BOTÕES 🕹️
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                            Função Enviar Imagem                          //
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+function enviarImagem(url){
+
+  const chat = document.getElementById("chat");
+
+  const div = document.createElement("div");
+  div.className = "mensagem bot";
+
+  const img = document.createElement("img");
+  img.src = url;
+
+  img.style.maxWidth = "120px";
+  img.style.borderRadius = "10px";
+
+  img.onerror = () => {
+    mostrar("⚠️ Não foi possível carregar a imagem.", "bot");
+  };
+
+  div.appendChild(img);
+  chat.appendChild(div);
+
+  chat.scrollTop = chat.scrollHeight;
+}
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                            Função Enviar Imagem                          //
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                                Emcurta Link 🖇️
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+async function encurtarLink(url){
+  try{
+    let res = await fetch("https://tinyurl.com/api-create.php?url=" + encodeURIComponent(url));
+    let txt = await res.text();
+    return txt;
+  }catch{
+    return "Erro ao encurtar link.";
+  }
+}
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+//                              Emcurta Link... 🖇️
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                               TRADUTOR 🌐
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+
+async function traduzirTexto(texto){
+
+  try{
+
+    let url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(texto)}&langpair=${idiomaOrigem}|${idiomaDestino}`;
+
+    let resposta = await fetch(url);
+    let dados = await resposta.json();
+
+    let traduzido = dados.responseData.translatedText;
+
+    mostrarTradutor("🌍 " + traduzido);
+
+  }catch{
+    mostrar("❌ Erro ao traduzir.", "bot");
+  }
+
+}
+
+function mostrarTradutor(texto){
+
+  let chat = document.getElementById("chat");
+
+  let div = document.createElement("div");
+  div.className = "mensagem bot";
+
+  div.innerText = texto;
+
+  div.style.fontSize = "18px"; // 👈 tamanho maior
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+//                               TRADUTOR 🌐
+// ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                  FONTES 👻                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+function mostrarFonte(texto){
+
+  let chat = document.getElementById("chat");
+
+  let div = document.createElement("div");
+  div.className = "mensagem bot";
+
+  div.innerText = texto;
+
+  div.style.fontSize = "22px"; // 👈 maior só aqui
+  div.style.fontWeight = "bold"; // opcional (fica bonito)
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+
+}
+
+
+
+
+function mostrarMenuFontes(nome){
+
+  const chat = document.getElementById("chat");
+
+  const div = document.createElement("div");
+  div.className = "mensagem bot";
+
+  div.innerHTML = `
+  <div>ㅤ</div>
+  <div style="font-size:20px; font-weight:bold;">
+    🎨 Escolha o estilo:
+  </div>
+  <div>ㅤ</div>
+
+  <button class="btnFonte" onclick="enviarFonte('${nome}','cursivo')">𝓒𝓾𝓻𝓼𝓲𝓿𝓸</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','bold')">🅱🅾🅻🅳</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','circular')">ⓒⓘⓡⓒⓤⓛⓐⓡ</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','bold2')">𝐁𝐨𝐥𝐝 2</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','smallcaps')">ᴀ ʙ ᴄ</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','italic')">𝐼𝑡𝑎𝑙𝑖𝑐</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','weird')">α в c</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','gothic')">𝕲𝖔𝖙𝖍𝖎𝖈</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','riscado')">A̶̶̶̶</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','mono')">𝙼𝚘𝚗𝚘</button>
+  <button class="btnFonte" onclick="enviarFonte('${nome}','script2')">𝓢𝓬𝓻𝓲𝓹𝓽 2</button>
+`;
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+
+}
+
+function enviarFonte(nome, tipo){
+
+  let resultado = "";
+
+  if(tipo === "cursivo"){
+    const mapa = {
+      a:"𝓪",b:"𝓫",c:"𝓬",d:"𝓭",e:"𝓮",f:"𝓯",g:"𝓰",
+      h:"𝓱",i:"𝓲",j:"𝓳",k:"𝓴",l:"𝓵",m:"𝓶",n:"𝓷",
+      o:"𝓸",p:"𝓹",q:"𝓺",r:"𝓻",s:"𝓼",t:"𝓽",u:"𝓾",
+      v:"𝓿",w:"𝔀",x:"𝔁",y:"𝔂",z:"𝔃"
+    };
+
+    resultado = nome.toLowerCase().split("").map(l => mapa[l] || l).join("");
+  }
+
+  if(tipo === "bold"){
+    const mapa = {
+      a:"🅰",b:"🅱",c:"🅲",d:"🅳",e:"🅴",f:"🅵",g:"🅶",
+      h:"🅷",i:"🅸",j:"🅹",k:"🅺",l:"🅻",m:"🅼",n:"🅽",
+      o:"🅾",p:"🅿",q:"🆀",r:"🆁",s:"🆂",t:"🆃",u:"🆄",
+      v:"🆅",w:"🆆",x:"🆇",y:"🆈",z:"🆉"
+    };
+
+    resultado = nome.toLowerCase().split("").map(l => mapa[l] || l).join("");
+  }
+
+  if(tipo === "circular"){
+    const mapa = {
+      a:"ⓐ",b:"ⓑ",c:"ⓒ",d:"ⓓ",e:"ⓔ",f:"ⓕ",g:"ⓖ",
+      h:"ⓗ",i:"ⓘ",j:"ⓙ",k:"ⓚ",l:"ⓛ",m:"ⓜ",n:"ⓝ",
+      o:"ⓞ",p:"ⓟ",q:"ⓠ",r:"ⓡ",s:"ⓢ",t:"ⓣ",u:"ⓤ",
+      v:"ⓥ",w:"ⓦ",x:"ⓧ",y:"ⓨ",z:"ⓩ"
+    };
+
+    resultado = nome.toLowerCase().split("").map(l => mapa[l] || l).join("");
+  }
+
+  if(tipo === "bold2"){
+
+  const mapa = {
+    a:"𝐚",b:"𝐛",c:"𝐜",d:"𝐝",e:"𝐞",f:"𝐟",g:"𝐠",
+    h:"𝐡",i:"𝐢",j:"𝐣",k:"𝐤",l:"𝐥",m:"𝐦",n:"𝐧",
+    o:"𝐨",p:"𝐩",q:"𝐪",r:"𝐫",s:"𝐬",t:"𝐭",u:"𝐮",
+    v:"𝐯",w:"𝐰",x:"𝐱",y:"𝐲",z:"𝐳",
+
+    A:"𝐀",B:"𝐁",C:"𝐂",D:"𝐃",E:"𝐄",F:"𝐅",G:"𝐆",
+    H:"𝐇",I:"𝐈",J:"𝐉",K:"𝐊",L:"𝐋",M:"𝐌",N:"𝐍",
+    O:"𝐎",P:"𝐏",Q:"𝐐",R:"𝐑",S:"𝐒",T:"𝐓",U:"𝐔",
+    V:"𝐕",W:"𝐖",X:"𝐗",Y:"𝐘",Z:"𝐙"
+  };
+
+  resultado = nome.split("").map(l => mapa[l] || l).join("");
+}
+
+if(tipo === "smallcaps"){
+
+  const mapa = {
+    a:"ᴀ",b:"ʙ",c:"ᴄ",d:"ᴅ",e:"ᴇ",f:"ғ",g:"ɢ",
+    h:"ʜ",i:"ɪ",j:"ᴊ",k:"ᴋ",l:"ʟ",m:"ᴍ",n:"ɴ",
+    o:"ᴏ",p:"ᴘ",q:"ǫ",r:"ʀ",s:"s",t:"ᴛ",u:"ᴜ",
+    v:"ᴠ",w:"ᴡ",x:"x",y:"ʏ",z:"ᴢ"
+  };
+
+  resultado = nome.toLowerCase().split("").map(l => mapa[l] || l).join("");
+}
+
+if(tipo === "italic"){
+
+  const mapa = {
+    a:"𝑎",b:"𝑏",c:"𝑐",d:"𝑑",e:"𝑒",f:"𝑓",g:"𝑔",
+    h:"ℎ",i:"𝑖",j:"𝑗",k:"𝑘",l:"𝑙",m:"𝑚",n:"𝑛",
+    o:"𝑜",p:"𝑝",q:"𝑞",r:"𝑟",s:"𝑠",t:"𝑡",u:"𝑢",
+    v:"𝑣",w:"𝑤",x:"𝑥",y:"𝑦",z:"𝑧",
+
+    A:"𝐴",B:"𝐵",C:"𝐶",D:"𝐷",E:"𝐸",F:"𝐹",G:"𝐺",
+    H:"𝐻",I:"𝐼",J:"𝐽",K:"𝐾",L:"𝐿",M:"𝑀",N:"𝑁",
+    O:"𝑂",P:"𝑃",Q:"𝑄",R:"𝑅",S:"𝑆",T:"𝑇",U:"𝑈",
+    V:"𝑉",W:"𝑊",X:"𝑋",Y:"𝑌",Z:"𝑍"
+  };
+
+  resultado = nome.split("").map(l => mapa[l] || l).join("");
+}
+
+if(tipo === "weird"){
+
+  const mapa = {
+    a:"α",b:"в",c:"c",d:"𝘥",e:"є",f:"ƒ",g:"g",
+    h:"н",i:"i",j:"נ",k:"к",l:"ℓ",m:"м",n:"ท",
+    o:"σ",p:"ρ",q:"q",r:"r",s:"s",t:"τ",u:"υ",
+    v:"v",w:"ω",x:"x",y:"y",z:"ʑ"
+  };
+
+  resultado = nome.toLowerCase().split("").map(l => mapa[l] || l).join("");
+}
+
+if(tipo === "gothic"){
+
+  const mapa = {
+    a:"𝖆",b:"𝖇",c:"𝖈",d:"𝖉",e:"𝖊",f:"𝖋",g:"𝖌",
+    h:"𝖍",i:"𝖎",j:"𝖏",k:"𝖐",l:"𝖑",m:"𝖒",n:"𝖓",
+    o:"𝖔",p:"𝖕",q:"𝖖",r:"𝖗",s:"𝖘",t:"𝖙",u:"𝖚",
+    v:"𝖛",w:"𝖜",x:"𝖝",y:"𝖞",z:"𝖟",
+
+    A:"𝕬",B:"𝕭",C:"𝕮",D:"𝕯",E:"𝕰",F:"𝕱",G:"𝕲",
+    H:"𝕳",I:"𝕴",J:"𝕵",K:"𝕶",L:"𝕷",M:"𝕸",N:"𝕹",
+    O:"𝕺",P:"𝕻",Q:"𝕼",R:"𝕽",S:"𝕾",T:"𝕿",U:"𝖀",
+    V:"𝖁",W:"𝖂",X:"𝖃",Y:"𝖄",Z:"𝖅"
+  };
+
+  resultado = nome.split("").map(l => mapa[l] || l).join("");
+}
+
+if(tipo === "riscado"){
+
+  resultado = nome.split("").map(l => l + "̶").join("");
+}
+
+if(tipo === "mono"){
+
+  const mapa = {
+    a:"𝚊",b:"𝚋",c:"𝚌",d:"𝚍",e:"𝚎",f:"𝚏",g:"𝚐",
+    h:"𝚑",i:"𝚒",j:"𝚓",k:"𝚔",l:"𝚕",m:"𝚖",n:"𝚗",
+    o:"𝚘",p:"𝚙",q:"𝚚",r:"𝚛",s:"𝚜",t:"𝚝",u:"𝚞",
+    v:"𝚟",w:"𝚠",x:"𝚡",y:"𝚢",z:"𝚣",
+
+    A:"𝙰",B:"𝙱",C:"𝙲",D:"𝙳",E:"𝙴",F:"𝙵",G:"𝙶",
+    H:"𝙷",I:"𝙸",J:"𝙹",K:"𝙺",L:"𝙻",M:"𝙼",N:"𝙽",
+    O:"𝙾",P:"𝙿",Q:"𝚀",R:"𝚁",S:"𝚂",T:"𝚃",U:"𝚄",
+    V:"𝚅",W:"𝚆",X:"𝚇",Y:"𝚈",Z:"𝚉"
+  };
+
+  resultado = nome.split("").map(l => mapa[l] || l).join("");
+}
+
+if(tipo === "script2"){
+
+  const mapa = {
+    a:"𝓪",b:"𝓫",c:"𝓬",d:"𝓭",e:"𝓮",f:"𝓯",g:"𝓰",
+    h:"𝓱",i:"𝓲",j:"𝓳",k:"𝓴",l:"𝓵",m:"𝓶",n:"𝓷",
+    o:"𝓸",p:"𝓹",q:"𝓺",r:"𝓻",s:"𝓼",t:"𝓽",u:"𝓾",
+    v:"𝓿",w:"𝔀",x:"𝔁",y:"𝔂",z:"𝔃",
+
+    A:"𝓐",B:"𝓑",C:"𝓒",D:"𝓓",E:"𝓔",F:"𝓕",G:"𝓖",
+    H:"𝓗",I:"𝓘",J:"𝓙",K:"𝓚",L:"𝓛",M:"𝓜",N:"𝓝",
+    O:"𝓞",P:"𝓟",Q:"𝓠",R:"𝓡",S:"𝓢",T:"𝓣",U:"𝓤",
+    V:"𝓥",W:"𝓦",X:"𝓧",Y:"𝓨",Z:"𝓩"
+  };
+
+  resultado = nome.split("").map(l => mapa[l] || l).join("");
+}
+
+
+
+
+  mostrarFonte(resultado);
+
+}
+
+function mostrarFonte(texto){
+
+  let chat = document.getElementById("chat");
+
+  let div = document.createElement("div");
+  div.className = "mensagem bot";
+
+  div.innerText = texto;
+
+  div.style.fontSize = "18px"; // 👈 maior só aqui
+  div.style.fontWeight = "."; // opcional (fica bonito)
+
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+
+}
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                                  FONTES 👻                               */
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+
+
+
+
+
+
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                               MENU LATERAL ⚙️
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+function abrirMenu(){
+
+  let menu = document.getElementById("menuLateral");
+
+  if(menu.style.display === "none"){
+    menu.style.display = "flex";
+  }else{
+    menu.style.display = "none";
+  }
+
+}
+
+function abrirMenu(){
+
+  let menu = document.getElementById("menuLateral");
+
+  if(menu.style.display === "none"){
+    menu.style.display = "flex";
+  }else{
+    menu.style.display = "none";
+  }
+
+}
+
+document.addEventListener("click", function(e){
+
+  let menu = document.getElementById("menuLateral");
+
+  if(!menu.contains(e.target) && e.target.innerText !== "☰"){
+    menu.style.display = "none";
+  }
+
+});
+
+function fecharMenu(){
+  document.getElementById("menuLateral").style.display = "none";
+}
+
+document.querySelectorAll("#menuLateral button").forEach(btn => {
+  btn.addEventListener("click", fecharMenu);
+});
+
+
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+/*                               MENU LATERAL ⚙️
+/* ≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈*/
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
